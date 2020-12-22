@@ -1,0 +1,17 @@
+Questions:
+	1 - Use AES or XChaCha2 ?
+	3 - Can I sync between devices ? If so how ? Mega ? Github ? External device ?
+	4 - Can I load pass to the clipboard ?
+	5 - How do I store everything on a SQLite table ?
+
+Objectives:
+	- Use ChaCha20-Poly1305 ( https://pycryptodome.readthedocs.io/en/latest/src/cipher/chacha20_poly1305.html )
+	- Use PKDF with Script ( https://pycryptodome.readthedocs.io/en/latest/src/protocol/kdf.html#scrypt ) to generate key to create ChaCha20 cipher (key must be 32 bit size)
+	- Can be used step-by-step with console gui or with only argument passed was the script is called
+
+
+- Add password:
+	Ask for service name
+	Ask for password
+	Encrypt
+	Store
