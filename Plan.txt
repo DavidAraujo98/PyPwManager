@@ -10,8 +10,3 @@ Objectives:
 	- Can be used step-by-step with console gui or with only argument passed was the script is called
 
 
-- Add password:
-	Ask for service name
-	Ask for password
-	Encrypt
-	Store
