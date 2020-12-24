@@ -210,6 +210,8 @@ def main():
                 op1 = int(input(
                     "> 1 - Change service\n> 2 - Change username\n> 3 - Change password\n> 4 - Delete service\n> 0 - Go back\n> "))
 
+                str = "\nChanges saved !"
+
                 if op1 == 1:
                     nserv = input("\nNew service: ")
                     db.execute(
@@ -232,13 +234,16 @@ def main():
                     db.execute(
                         "DELETE from Hashes WHERE (service='%s' AND username='%s');" % (serv, user))
 
+                elif op1 == 0:
+                    str = "No changes were applied"
+
                 db.commit()
-                input("\nChanges saved !")
+                print(str)
 
             else:
                 print("\nService non existent")
 
-            input("\nPress Enter to continue...")
+            input("\n(Press Enter to continue...)")
 
         # > 4 - List all services
         elif op == 4:
@@ -251,7 +256,7 @@ def main():
 
             for x in data:
                 print("ID:\t\t%s" % (x[0]))
-                print("Service:\t%s" % (x[1]))
+                print("Service name:\t%s" % (x[1]))
                 print("Username:\t%s\n" % (x[2]))
 
             input("\n(Press Enter to continue...)")
