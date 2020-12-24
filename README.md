@@ -10,7 +10,7 @@
 ## **Features**
  - Storage is made possible with a SQLite database
  - Only encrypted version of a password is keeped
- - Access requires log in
+ - Access requires login
  - Simple console GUI
  - For security reasons, password input is invisible
 
