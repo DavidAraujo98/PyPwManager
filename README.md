@@ -2,19 +2,20 @@
 
 [![Python](https://www.python.org/static/community_logos/python-powered-w-100x40.png)](https://www.python.org/)
 
-## What is PyManager ?
+## **What is PyManager ?**
 
  PyManager is a simple password manager using [Argon2](https://pypi.org/project/argon2-cffi/) hashing, with [ChaCha20](https://pycryptodome.readthedocs.io/en/latest/src/cipher/chacha20.html) encryption using a password derived key generated with [Scrypt](https://cryptobook.nakov.com/mac-and-key-derivation/scrypt) from a master and a login passwords 
  
 #
-## Features
+## **Features**
  - Storage is made possible with a SQLite database
  - Only encrypted version of a password is keeped
  - Access requires log in
  - Simple console GUI
+ - For security reasons, password input is invisible
 
 #
-## How it works ?
+## **How it works ?**
 
 - ### First run
 
@@ -32,12 +33,40 @@
     > *Master* password is asked **only at login**, soo if you have passwords encrypted with a *master* different from the one you just provided you wont be able to decrypt them. So pay attention to what passwords you may want to access to encrypt or decrypt when providing the master password at login
 
 #
-### Needed packages
+## **Needed modules**
  - [pycryptodome](https://pypi.org/project/pycryptodome/)
  - [pyscrypt](https://pypi.org/project/pyscrypt/)
  - [argon2-cffi](https://pypi.org/project/argon2-cffi/)
 
 #
-## Images
+## **Images**
 
+>## **First time running**
+>![](img/1_Login_First_Time.png)
 
+>## **Login**
+>![](img/2_Login.png)
+
+>## **Menu**
+>![](img/3_Menu.png)
+
+>## **Adding a new password**
+>![](img/4_Add_new_password.png)
+
+>## **Retrieve a stored passsword**
+>![](img/5_Retrieve_password.png)
+
+>## **Password editing menu**
+>![](img/6_Edit_password_menu.png)
+
+>## **Listing all stored passwords**
+>![](img/7_List_all_services.png)
+
+>## **Database tables**
+>![](img/8_database.png)
+
+>## **Password storing database (*Hashes*) structure**
+>![](img/9_Hashes_table.png)
+
+>## **Login password storage database (*Login*) structure**
+>![](img/10_Login_table.png)
