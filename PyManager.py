@@ -56,18 +56,17 @@ def clean():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def login(db1, mstr, slt):
+def login(db1, slt):
     row = db1.cursor()
 
-    row.execute("""SELECT hash1, hash2 FROM Login;""")
+    row.execute("""SELECT hash1 FROM Login;""")
 
     data = row.fetchall()
     row.close()
 
     try:
         PHs = PasswordHasher()
-        PHs.verify(data[0][0], mstr)
-        PHs.verify(data[0][1], slt)
+        PHs.verify(data[0][0], slt)
         print("\nLogin successful...")
         input("\n(Press Enter to continue...)")
     except:
@@ -114,26 +113,28 @@ def main():
 
         # Table Login - will be used to store the hashed (argon2-cffi) versions of the master and 2FA password
         db.execute("""CREATE TABLE Login(
-            hash1    STRING,
-            hash2    STRING);""")
+            hash1    STRING);""")
 
         db.commit()
 
+        # Login credentials
         print("!! No suitable database, a new one will be created, set the master password now !!\n")
-        master = (getpass("New master password: ")).encode('utf-8')
-        salt = (getpass("Second factor password: ")).encode('utf-8')
+        master = (getpass("Encryption password: ")).encode('utf-8')
+        salt = (getpass("Login password: ")).encode('utf-8')
 
         PHs = PasswordHasher()
-        db.execute("INSERT INTO Login (hash1, hash2) VALUES('%s', '%s');" %
-                   (PHs.hash(master), PHs.hash(salt)))
+        db.execute("INSERT INTO Login (hash1) VALUES('%s');" %
+                   (PHs.hash(salt)))
 
         db.commit()
 
     else:
         db = sqlite3.connect("keystorage.db")
-        master = (getpass("Master password: ")).encode('utf-8')
-        salt = (getpass("Second factor password: ")).encode('utf-8')
-        login(db, master, salt)
+
+        # Login credentials
+        master = (getpass("Encryption password: ")).encode('utf-8')
+        salt = (getpass("Login password: ")).encode('utf-8')
+        login(db, salt)
 
     while True:
         clean()
