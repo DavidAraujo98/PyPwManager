@@ -32,6 +32,12 @@
     > *Master* password is asked **only at login**, soo if you have passwords encrypted with a *master* different from the one you just provided you wont be able to decrypt them. So pay attention to what passwords you may want to access to encrypt or decrypt when providing the master password at login
 
 #
+### Needed packages
+ - [pycryptodome](https://pypi.org/project/pycryptodome/)
+ - [pyscrypt](https://pypi.org/project/pyscrypt/)
+ - [argon2-cffi](https://pypi.org/project/argon2-cffi/)
+
+#
 ## Images
 
 
