@@ -1,0 +1,4 @@
+pip==20.3.3
+psycryptodome==3.9.9
+pyscrypt==1.6.2
+argon2-cffi==20.1.0

@@ -118,7 +118,8 @@ def main():
         db.commit()
 
         # Login credentials
-        print("!! No suitable database, a new one will be created, set the master password now !!\n")
+        print("""!! No suitable database, a new one will be created, set the master password now !!""")
+
         master = (getpass("Encryption password: ")).encode('utf-8')
         salt = (getpass("Login password: ")).encode('utf-8')
 
@@ -134,6 +135,7 @@ def main():
         # Login credentials
         master = (getpass("Encryption password: ")).encode('utf-8')
         salt = (getpass("Login password: ")).encode('utf-8')
+
         login(db, salt)
 
     while True:
@@ -268,4 +270,5 @@ def main():
 
 
 if __name__ == "__main__":
+    mega = Mega()
     main()
