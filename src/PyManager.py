@@ -210,7 +210,7 @@ def main():
                 print("\nYour password is: %s\n" % decpw.decode('utf-8'))
 
                 op1 = int(input(
-                    "> 1 - Change service\n> 2 - Change username\n> 3 - Change password\n> 4 - Delete service\n> 0 - Go back\n> "))
+                    "> 1 - Change service name\n> 2 - Change username\n> 3 - Change password\n> 4 - Delete service\n> 0 - Go back\n> "))
 
                 str = "\nChanges saved !"
 
