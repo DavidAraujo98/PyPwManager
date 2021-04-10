@@ -1,6 +1,6 @@
 # PyManager 
 
-[![Python](https://www.python.org/static/community_logos/python-powered-w-100x40.png)](https://www.python.org/)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ## **What is PyManager ?**
 
